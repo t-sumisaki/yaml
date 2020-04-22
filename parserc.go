@@ -318,7 +318,8 @@ func yaml_parser_parse_document_end(parser *yaml_parser_t, event *yaml_event_t) 
 		implicit = false
 	}
 
-	parser.tag_directives = parser.tag_directives[:0]
+	// TEST no reset directives
+	// parser.tag_directives = parser.tag_directives[:0]
 
 	parser.state = yaml_PARSE_DOCUMENT_START_STATE
 	*event = yaml_event_t{
